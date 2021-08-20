@@ -13,9 +13,10 @@
     state: present  
 
 - name: Install flask packages including postgres pre-reqs
-  package:
+  dnf:
     name: "{{ __package }}"
     state: present
+    disable_gpg_check: yes
   loop: 
     - "{{ postgres_rhel8_repo }}"
     - "{{ app_yum_packages }}"        
