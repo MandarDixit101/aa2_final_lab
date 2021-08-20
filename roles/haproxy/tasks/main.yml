@@ -1,18 +1,28 @@
+
 ---
 
-- name: Install load balancer packages
-  package:
-    name: "{{ load_balancer_packages }}"
-    state: present
+- name: Install HAproxy
+  yum: 
+    name: "{{ __package }}"
+    state: latest
+  loop: "{{ haproxy_packages }}"
+  loop_control:
+    loop_var: __package
 
-- name: Configure haproxy load balancing
+- name: Copy HAproxy template
   template:
     src: haproxy.cfg.j2
     dest: /etc/haproxy/haproxy.cfg
-  notify: restart_haproxy
+  notify:
+    - restart_haproxy
 
-- name: Enable Haproxy
+- name: Start HAproxy
   service:
-    name: haproxy
+    name: "{{ __service }}"
     state: started
-    enabled: true
+    enabled: yes
+  loop: "{{ haproxy_services }}"
+  loop_control:
+    loop_var: __service
+
+...

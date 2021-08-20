@@ -1,2 +1,9 @@
 ---
-# defaults file for roles/haproxy
+
+haproxy_packages:
+  - haproxy
+
+haproxy_services: 
+  - haproxy
+
+...
