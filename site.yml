@@ -1,6 +1,6 @@
 ---
-import_playbook: main_apps.yml
-import_playbook: main_appdbs.yml
-import_playbook: main_frontends.yml
+- import_playbook: main_apps.yml
+- import_playbook: main_appdbs.yml
+- import_playbook: main_frontends.yml
 
 ...
