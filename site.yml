@@ -1,5 +1,5 @@
 ---
-include_playbook: main_apps.yml.yml
+include_playbook: main_apps.yml
 include_playbook: main_appdbs.yml
 include_playbook: main_frontends.yml
 
