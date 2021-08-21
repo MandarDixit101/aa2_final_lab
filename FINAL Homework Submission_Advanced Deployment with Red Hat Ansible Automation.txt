@@ -1,0 +1,6 @@
+Templates:-
+https://control.6173.dynamic.opentlc.com:8443/#/templates?template_search=page_size:20;order_by:name;type:workflow_job_template,job_template
+
+Jobs :-
+https://control.6173.dynamic.opentlc.com:8443/#/workflows/97
+
